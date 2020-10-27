@@ -2,16 +2,18 @@ public class Tester{
   public static void main(String[] args){
     int[] arr = {1, 3, 5, 7, 5, 30, 2, 5, 5, 10};
     int[][] matrix = { {3, 4, 5, 6, 7}, {7, 6, 5, 4, 3}, {1, 2, 8, 9, 10} };
-    System.out.println("sum");
+    System.out.println();
     System.out.println(ArrayOps.sum(arr));
-    System.out.println("largest");
+    System.out.println();
     System.out.println(ArrayOps.largest(arr));
-    System.out.println("sumRows");
+    System.out.println();
     System.out.println(arrToString(ArrayOps.sumRows(matrix)));
-    System.out.println("largestInRow");
+    System.out.println();
     System.out.println(arrToString(ArrayOps.largestInRows(matrix)));
-    System.out.println("sumof2D");
+    System.out.println();
     System.out.println(ArrayOps.sum(matrix));
+    System.out.println();
+    System.out.println(arrToString(ArrayOps.sumCols(matrix)));
   }
 
   public static String arrToString(int[] arr){
