@@ -55,11 +55,26 @@ public class ArrayOps{
     int[] totalCols = new int[matrix[0].length];
     for (int i = 0; i < matrix[0].length; i++) {
       int colsum = 0;
-      for (int j = 0; j < matrix.length; j++){
+      for (int j = 0; j < matrix.length; j++) {
         colsum += matrix[j][i];
       }
       totalCols[i] = colsum;
     }
     return totalCols;
+  }
+
+  public static boolean isRowMagic(int[][] matrix) {
+    int rowSum = 0;
+    int falseCount = 0;
+    for (int i = 0; i < matrix.length - 1; i++) {
+      rowSum = ArrayOps.sum(matrix[i]);
+      if (rowSum != ArrayOps.sum(matrix[i + 1])) {
+        falseCount++;
+      }
+    }
+    if (falseCount > 0) {
+      return false;
+    }
+    return true;
   }
 }
