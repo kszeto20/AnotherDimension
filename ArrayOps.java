@@ -64,16 +64,21 @@ public class ArrayOps{
   }
 
   public static boolean isRowMagic(int[][] matrix) {
-    int rowSum = 0;
-    int falseCount = 0;
-    for (int i = 0; i < matrix.length - 1; i++) {
-      rowSum = ArrayOps.sum(matrix[i]);
-      if (rowSum != ArrayOps.sum(matrix[i + 1])) {
-        falseCount++;
+    int[] rowSum = sumRows(matrix);
+    for (int i = 0; i < rowSum.length; i++) {
+      if (rowSum[0] != rowSum[i]){
+        return false;
       }
     }
-    if (falseCount > 0) {
-      return false;
+    return true;
+  }
+
+  public static boolean isColMagic(int[][] matrix) {
+    int[] colSum = sumCols(matrix);
+    for (int i = 0; i < colSum.length; i++) {
+      if (colSum[0] != colSum[i]){
+        return false;
+      }
     }
     return true;
   }
