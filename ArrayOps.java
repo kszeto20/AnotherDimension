@@ -1,6 +1,6 @@
 public class ArrayOps{
   public static void main(String[] args) {
-    System.out.println("hello world");
+    
   }
 
   public static int sum(int[] arr) {
@@ -32,4 +32,14 @@ public class ArrayOps{
     }
     return comboRow;
   }
+
+  public static int[] largestInRows(int[][] matrix) {
+    int[] biggestTerm = new int[matrix.length];
+    for (int i = 0; i < matrix.length; i++){
+      biggestTerm[i] = ArrayOps.largest(matrix[i]);
+    }
+  return biggestTerm;
+  }
+
+
 }
